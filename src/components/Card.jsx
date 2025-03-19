@@ -60,7 +60,12 @@ const CardText = styled.div`
 `;
 
 const ContentWrapper = styled.div`
+  overflow: hidden;
   padding: 24px;
+
+  @media (max-width: 425px) {
+    min-height: 78px;
+  }
 `;
 
 const Img = styled.img`

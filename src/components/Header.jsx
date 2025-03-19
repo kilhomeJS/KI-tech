@@ -26,7 +26,7 @@ const Li = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: #222222;
+    color: #161616;
   }
 `;
 

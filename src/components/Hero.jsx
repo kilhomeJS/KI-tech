@@ -75,6 +75,25 @@ const ParalaxObj = styled.div`
     background: radial-gradient(circle, rgba(13, 219, 24, 0.8), transparent);
     filter: blur(25px);
   }
+
+  @media (max-width: 768px) {
+    &.f {
+      display: none;
+    }
+    &.s {
+      top: 10%;
+      left: 0;
+    }
+    &.t {
+      right: 0;
+    }
+  }
+  @media (max-width: 768px) {
+    &.t {
+      display: none;
+      right: 0;
+    }
+  }
 `;
 
 const Hero = () => {
@@ -112,7 +131,7 @@ const Hero = () => {
         const speed = parseFloat(el.dataset.speed) || 1;
 
         const x = mouseX.current * speed;
-        const y = mouseY.current * speed + scrollY.current * speed * 0.2;
+        const y = mouseY.current * speed - scrollY.current * speed * 0.2; // Добавил scrollY
 
         el.style.transform = `translate(${x}px, ${y}px)`;
       });
@@ -129,7 +148,6 @@ const Hero = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
   return (
     <>
       <ParalaxContainer>

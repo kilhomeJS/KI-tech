@@ -9,7 +9,7 @@ const AboutSection = styled.div`
 `;
 
 const Content = styled.div`
-  width: 50%;
+  width: 100%;
   font-size: 28px;
 
   @media (max-width: 768px) {
@@ -56,6 +56,7 @@ const Content = styled.div`
     width: 100%;
   }
 `;
+
 const Header2 = styled.h2`
   width: 50%;
   font-size: 30px;
@@ -85,7 +86,7 @@ const Wrapper = styled.div`
   }
 
   &.exp-wrap {
-    gap: 72px;
+    gap: 130px;
   }
 
   &.about {
@@ -180,51 +181,75 @@ const About = () => {
       </Wrapper>
       <Wrapper>
         <Header2>Experience</Header2>
-        <Content className="about">
-          <ul>
-            <li>Company name</li>
-            <li>Job title</li>
-            <li>August 2021–today</li>
-          </ul>
-          <ul>
-            <li>Company name</li>
-            <li>Job title</li>
-            <li>August 2021–today</li>
-          </ul>
-          <ul>
-            <li>Company name</li>
-            <li>Job title</li>
-            <li>August 2021–today</li>
-          </ul>
-        </Content>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+          style={{width: "100%"}}
+        >
+          <Content className="about">
+            <ul>
+              <li>Company name</li>
+              <li>Job title</li>
+              <li>August 2021–today</li>
+            </ul>
+            <ul>
+              <li>Company name</li>
+              <li>Job title</li>
+              <li>August 2021–today</li>
+            </ul>
+            <ul>
+              <li>Company name</li>
+              <li>Job title</li>
+              <li>August 2021–today</li>
+            </ul>
+          </Content>
+        </motion.div>
       </Wrapper>
 
       <Wrapper className="exp-wrap">
         <ContentWrapper>
           <Header2>Services</Header2>
-          <Content className="exp">
-            <ul>
-              <li>Design systems</li>
-              <li>Product design</li>
-              <li>August 2021–today</li>
-              <li>UX design and research</li>
-              <li>Design strategy</li>
-              <li className="exp-wrap__last">Websites and mobile app design</li>
-            </ul>
-          </Content>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Content className="exp">
+              <ul>
+                <li>Design systems</li>
+                <li>Product design</li>
+                <li>August 2021–today</li>
+                <li>UX design and research</li>
+                <li>Design strategy</li>
+                <li className="exp-wrap__last">
+                  Websites and mobile app design
+                </li>
+              </ul>
+            </Content>
+          </motion.div>
         </ContentWrapper>
         <ContentWrapper>
           <Header2>Selected clients</Header2>
-          <Content className="exp">
-            <ul>
-              <li>Veja</li>
-              <li>Polestar</li>
-              <li>Allbirds</li>
-              <li>Company name</li>
-              <li>Oatly</li>
-              <li className="exp-wrap__last">Bang & Olufsen</li>
-            </ul>
-          </Content>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Content className="exp">
+              <ul>
+                <li>Veja</li>
+                <li>Polestar</li>
+                <li>Allbirds</li>
+                <li>Company name</li>
+                <li>Oatly</li>
+                <li className="exp-wrap__last">Bang & Olufsen</li>
+              </ul>
+            </Content>
+          </motion.div>
         </ContentWrapper>
       </Wrapper>
     </AboutSection>

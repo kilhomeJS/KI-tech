@@ -34,6 +34,7 @@ const CardsContainer = styled.div`
 
   @media (max-width: 768px) {
     & {
+      gap: 15px;
       justify-content: center;
     }
   }

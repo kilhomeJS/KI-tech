@@ -19,6 +19,12 @@ const ContactE = styled.div`
     font-size: 37px;
     color: #000;
     text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: #464646;
+      transition: 0.3s;
+    }
   }
 
   @media (max-width: 768px) {
@@ -41,6 +47,14 @@ const Header2 = styled.h2`
       font-size: 24px;
     }
   }
+  @media (max-width: 425px) {
+    & {
+      margin: 0;
+      margin-bottom: 20px;
+      align-items: center;
+      width: auto;
+    }
+  }
 `;
 
 const Contact = () => {
@@ -48,7 +62,9 @@ const Contact = () => {
     <ContactSection id="contact">
       <ContactE>
         <Header2>Want to create something awesome? Drop me an email.</Header2>
-        <a href="#">→ Hi@email.com</a>
+        <a href="#">
+          <span>→</span> killhome2000@gmail.com
+        </a>
       </ContactE>
     </ContactSection>
   );
