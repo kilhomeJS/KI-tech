@@ -20,7 +20,9 @@ function App() {
       <Container>
         <Works />
       </Container>
+      
       <About />
+
       <Container>
         <Contact />
         <Footer />

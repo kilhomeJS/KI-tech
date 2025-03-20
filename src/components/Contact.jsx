@@ -41,6 +41,7 @@ const Header2 = styled.h2`
   text-align: center;
   font-size: 57px;
   font-weight: 400;
+  font-family: "Noto Sans Mono", monospace;
 
   @media (max-width: 768px) {
     & {
