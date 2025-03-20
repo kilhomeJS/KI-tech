@@ -19,7 +19,9 @@ function App() {
       <Hero />
       <Container>
         <Works />
-        <About />
+      </Container>
+      <About />
+      <Container>
         <Contact />
         <Footer />
       </Container>

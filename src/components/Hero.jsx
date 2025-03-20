@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Container } from "../App";
 
@@ -11,13 +11,16 @@ const HeroContaier = styled.div`
 `;
 
 const Header1 = styled.h1`
-  width: 50%;
+  width: 66%;
   font-size: 64px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
 
+  span.blue {
+    color: #2893eb;
+  }
+
   span {
-    display: flex;
     color: #757575;
   }
 
@@ -158,19 +161,27 @@ const Hero = () => {
         />
         <ParalaxObj
           className="t"
-          data-speed="3"
+          data-speed="2"
           ref={(el) => (parallaxRefs.current[1] = el)}
         />
         <ParalaxObj
           className="f"
-          data-speed="4"
+          data-speed="2"
           ref={(el) => (parallaxRefs.current[2] = el)}
         />
         <HeroContaier>
           <Container>
             <Header1 className="content">
-              I’m Jonas — a senior product designer
-              <span>that cares a lot about positive impact projects</span>
+              I will create <span class="blue">any automation </span> that will{" "}
+              <span className="blue">save your time and improve</span> the
+              quality of your bussiness operation
+              {/* <span>
+                {" "}
+                that will <span class="pink">save and improve</span> the quality
+                your time of your bussiness operation
+              </span> */}
+              {/* I’m Jonas — a senior product designer
+              <span>that cares a lot about positive impact projects</span> */}
             </Header1>
           </Container>
         </HeroContaier>

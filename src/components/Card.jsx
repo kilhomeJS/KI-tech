@@ -74,6 +74,7 @@ const Img = styled.img`
 
   @media (max-width: 425px) {
     width: 100%;
+    text-align: center;
   }
 `;
 

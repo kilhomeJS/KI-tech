@@ -7,6 +7,7 @@ import img3 from "../assets/img/IMAGE-1.jpg";
 import img4 from "../assets/img/IMAGE-4.jpg";
 import img5 from "../assets/img/IMAGE-2.jpg";
 import img6 from "../assets/img/IMAGE-5.jpg";
+import Counter from "./ui/Count";
 
 const WorksSection = styled.div`
   padding: 150px 0;
@@ -46,9 +47,32 @@ const CardWrap = styled.div`
   gap: 15px;
 `;
 
+const CountContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+
 const Works = () => {
   return (
     <WorksSection id="works">
+      <CountContainer>
+        <Counter value={100} duration={3} symbol="+">
+          <span>Project</span>
+        </Counter>
+        <Counter value={3} duration={3}>
+          <span>Scenarios and zaps</span>
+        </Counter>
+        <Counter value={1000} duration={3} symbol=">">
+          <span>Experience</span>
+        </Counter>
+      </CountContainer>
       <WorksTitle>
         Featured work <span>· 2018–2022</span>
       </WorksTitle>
