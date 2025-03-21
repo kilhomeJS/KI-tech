@@ -5,6 +5,8 @@ import Works from "./components/Works";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Reason from "./components/Resons";
+import HowWorks from "./components/HowWorks";
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -20,9 +22,11 @@ function App() {
       <Container>
         <Works />
       </Container>
-      
+
       <About />
 
+      <Reason />
+      <HowWorks />
       <Container>
         <Contact />
         <Footer />

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Container } from "../App";
 import { Header2 } from "./About";
 
-const Button = styled.button`
+export const Button = styled.button`
   width: 100%;
   background: transparent;
   border: 2px solid #fff;
@@ -25,8 +25,8 @@ const Button = styled.button`
   }
 `;
 
-const BackGround = styled.div`
-  background: #353535;
+export const BackGround = styled.div`
+  background: ${({ bg }) => bg && bg};
 `;
 
 const ApisContainer = styled.div`
@@ -117,10 +117,12 @@ const ApisExp = () => {
       style={{ width: "100%" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <BackGround>
+      <BackGround bg="#8ca6f3">
         <Container>
           <ApisContainer>
-            <Header2>APIs worked</Header2>
+            <Header2>
+              APIs worked
+            </Header2>
             <Wrapper>
               <ApisExpWrapper className="apis-wrapper">
                 <ul>
