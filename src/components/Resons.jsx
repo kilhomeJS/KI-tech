@@ -7,7 +7,7 @@ import ExperienceIcon from "./icons/ExperienceIcon";
 import QualityIcon from "./icons/QualityIcon";
 import ShieldIcon from "./icons/ShieldIcon";
 import HandsIcon from "./icons/HandsIcon";
-import CodeIcon from "./icons/codeIcon";
+import CodeIcon from "./icons/CodeIcon";
 import { useState, useRef } from "react";
 
 const ResonContainer = styled.div`
