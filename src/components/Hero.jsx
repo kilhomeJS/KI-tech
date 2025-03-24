@@ -2,6 +2,93 @@ import { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { Container } from "../App";
 import MouseIcon from "./icons/MouseIcon";
+import React from 'react';
+
+const gradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+
+const GradientBackground = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: ${gradient} 15s ease infinite;
+`;
+
+const ContentWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 2;
+`;
+
+const Headline = styled.div`
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+`;
+
+const Highlight = styled.span`
+  color: #ff9d40;
+`;
+
+const Tagline = styled.div`
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+`;
+
+const ActionButtons = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+`;
+
+const Button = styled.button`
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LightButton = styled(Button)`
+  background-color: white;
+  color: #333;
+`;
+
+const DarkButton = styled(Button)`
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+`;
+
 
 const HeroContaier = styled.div`
   position: relative;
@@ -217,6 +304,23 @@ const Hero = () => {
         />
         <HeroContaier>
           <Container>
+          <GradientBackground>
+      <ContentWrapper>
+        <Headline>
+          The <Highlight>AI-ready</Highlight><br/>
+          Automation<br/>
+          Partner
+        </Headline>
+        <Tagline>
+          Premium way to turn <Highlight>AI</Highlight> into business performance.<br/>
+          Value Added Tech.
+        </Tagline>
+        <ActionButtons>
+          <LightButton>Get your AI implementation plan in 24h</LightButton>
+          <DarkButton>Schedule Your AI Readiness Assessment</DarkButton>
+        </ActionButtons>
+      </ContentWrapper>
+    </GradientBackground>
             <Header1 className="content">
               I will create <span className="blue">any automation </span> that
               will <span className="blue">save your time and improve</span> the
