@@ -330,7 +330,7 @@ const Hero = () => {
       <Headline>
         We <Highlight>will</Highlight> create<br/>
         any automation<br/>
-        for<Highlight>you</Highlight><br/>
+        for <Highlight>you</Highlight><br/>
         </Headline>
         <Tagline>
           that <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>

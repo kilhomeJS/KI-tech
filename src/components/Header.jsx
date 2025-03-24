@@ -3,64 +3,104 @@ import styled from "styled-components";
 import { Container } from "../App";
 
 const HeaderElem = styled.header`
-  padding: 25px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin: 1rem auto;
+  max-width: 1024px;
+`;
+
+const HeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+const Logo = styled.div`
+  font-family: 'Krona One', sans-serif;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin: 0 2rem;
 `;
 
 const List = styled.ul`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  gap: 26px;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 
   @media (max-width: 768px) {
-    & {
-      justify-content: center;
-    }
+    gap: 1rem;
   }
 `;
 
 const Li = styled.li`
-  font-size: 18px;
+  font-size: 1rem;
   list-style: none;
-  color: #525252;
+  color: white;
   cursor: pointer;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #161616;
+    color: var(--accent-color);
+  }
+`;
+
+const GetStartedButton = styled.button`
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 `;
 
 const Header = () => {
   const scrollToSection = (section) => {
     const targetElement = document.getElementById(section);
-    window.scrollTo({
-      top: targetElement.offsetTop,
-
-      behavior: "smooth",
-    });
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <Container>
-      <HeaderElem id="home">
-        <nav>
+    <HeaderElem id="home">
+      <HeaderContent>
+        <Logo>VALUE ADDED TECH</Logo>
+        
+        <Nav>
           <List>
-            <Li className="dark-text" onClick={() => scrollToSection("works")}>
-              Work
-            </Li>
-            <Li className="dark-text" onClick={() => scrollToSection("about")}>
-              About
-            </Li>
-            <Li
-              className="dark-text"
-              onClick={() => scrollToSection("contact")}
-            >
-              Contact
-            </Li>
+            <Li onClick={() => scrollToSection("blog")}>Blog</Li>
+            <Li onClick={() => scrollToSection("cases")}>Cases</Li>
+            <Li onClick={() => scrollToSection("tutorials")}>Tutorials</Li>
           </List>
-        </nav>
-      </HeaderElem>
-    </Container>
+        </Nav>
+        
+        <GetStartedButton>Get Started</GetStartedButton>
+      </HeaderContent>
+    </HeaderElem>
   );
 };
 
