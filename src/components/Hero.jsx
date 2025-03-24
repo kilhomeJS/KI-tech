@@ -328,13 +328,12 @@ const Hero = () => {
           <GradientBackground>
       <ContentWrapper>
       <Headline>
-      <Highlight>I</Highlight> will<br/>
-        create<br/>
-        <Highlight>any automation</Highlight>
+        I <Highlight>WILL</Highlight>CREATE<br/>
+        ANY AUTOMATION<br/>
+        FOR<Highlight>YOU</Highlight><br/>
         </Headline>
         <Tagline>
-          that <Highlight>save your time and improve</Highlight>
-          the quality of your bussiness operation<br/>
+          that <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>
           Ki-Tech
           </Tagline>
         <ActionButtons>
