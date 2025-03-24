@@ -7,18 +7,21 @@ import React from 'react';
 const gradient = keyframes`
   0% {
     background-position: 0% 25%;
+    box-shadow: 0px 0px 20px rgba(255, 0, 128, 0.2), 0px 0px 40px rgba(128, 0, 255, 0.2);
   }
   25% {
     background-position: 50% 0%;
   }
   50% {
     background-position: 100% 50%;
+     box-shadow: 0px 0px 40px rgba(255, 0, 128, 0.5), 0px 0px 80px rgba(128, 0, 255, 0.5);
   }
   75% {
     background-position: 50% 100%;
   }
   100% {
     background-position: 0% 25%;
+    box-shadow: 0px 0px 20px rgba(255, 0, 128, 0.2), 0px 0px 40px rgba(128, 0, 255, 0.2);
   }
 `;
 
@@ -357,12 +360,12 @@ const Hero = () => {
           <GradientBackground>
       <ContentWrapper>
       <Headline>
-        We <Highlight>will</Highlight> create<br/>
+        We <GradientText>will</GradientText> create<br/>
         any automation<br/>
-        for <Highlight>you</Highlight><br/>
+        for <GradientText>you</GradientText><br/>
         </Headline>
         <Tagline>
-          That <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>
+          That <GradientText>save your time and improve</GradientText> the quality of your bussiness operation<br/>
           Ki-Tech
           </Tagline>
         <ActionButtons>
