@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Container } from "../App";
-import img3 from "../assets/img/logo.png";
 
 const HeaderElem = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
@@ -10,6 +9,7 @@ const HeaderElem = styled.header`
   border-radius: 15px;
   margin: 1rem auto;
   max-width: 1024px;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.15);
 `;
 
 const HeaderContent = styled.div`
@@ -25,28 +25,13 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.div`
-  position: relative;
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: 40px;
   
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.3);
-    opacity: 0.7;
-    pointer-events: none;
   }
 `;
 
