@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Container } from "../App";
+import img3 from "../assets/img/logo.png";
 
 const HeaderElem = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
