@@ -7,55 +7,39 @@ import React from 'react';
 const gradient = keyframes`
   0% {
     background-position: 0% 25%;
-    box-shadow: 0px 0px 20px rgba(255, 0, 128, 0.2), 0px 0px 40px rgba(128, 0, 255, 0.2);
   }
   25% {
     background-position: 50% 0%;
   }
   50% {
     background-position: 100% 50%;
-     box-shadow: 0px 0px 40px rgba(255, 0, 128, 0.5), 0px 0px 80px rgba(128, 0, 255, 0.5);
   }
   75% {
     background-position: 50% 100%;
   }
   100% {
     background-position: 0% 25%;
-    box-shadow: 0px 0px 20px rgba(255, 0, 128, 0.2), 0px 0px 40px rgba(128, 0, 255, 0.2);
   }
 `;
 
-const GradientText = styled.h1`
-  font-size: 3rem;
-  font-weight: bold;
-  background: linear-gradient(45deg, #ffffff, rgba(255, 255, 255, 0.7));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  mix-blend-mode: lighten;
-`;
-
-const glowAnimation = keyframes`
-  0% {
-    box-shadow: 0px 0px 50px rgba(255, 0, 128, 0.4), 0px 0px 100px rgba(128, 0, 255, 0.4);
+const glow = keyframes`
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(238, 119, 82, 0.6);
+  }
+  25% {
+    box-shadow: 0 0 40px rgba(231, 60, 126, 0.7);
   }
   50% {
-    box-shadow: 0px 0px 70px rgba(255, 0, 128, 0.7), 0px 0px 120px rgba(128, 0, 255, 0.7);
+    box-shadow: 0 0 50px rgba(156, 39, 176, 0.8);
   }
-  100% {
-    box-shadow: 0px 0px 50px rgba(255, 0, 128, 0.4), 0px 0px 100px rgba(128, 0, 255, 0.4);
+  75% {
+    box-shadow: 0 0 40px rgba(35, 166, 213, 0.7);
   }
-`;
-
-const HeroContainer = styled.div`
-  position: relative;
-  padding: 50px;
-  border-radius: 20px;
-  background: linear-gradient(45deg, #ff0080, #8000ff);
-  animation: ${glowAnimation} 3s infinite alternate;
 `;
 
 const GradientBackground = styled.div`
   position: relative;
+  padding: 50px;
   width: 90%;
   max-width: 1200px;
   height: 65vh;
@@ -69,11 +53,30 @@ const GradientBackground = styled.div`
     #9c27b0, 
     #23a6d5, 
     #23d5ab, 
+    #8bc34a,
+    #ee7752, 
+    #e73c7e, 
+    #9c27b0, 
+    #23a6d5, 
+    #23d5ab, 
     #8bc34a
   );
-  background-size: 300% 300%;
-  animation: ${gradient} 20s ease infinite;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  background-size: 200% 200%;
+  animation: ${gradient} 20s ease infinite, ${glow} 20s ease infinite;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    filter: blur(20px);
+    opacity: 0.7;
+    z-index: -1;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -360,13 +363,13 @@ const Hero = () => {
           <GradientBackground>
       <ContentWrapper>
       <Headline>
-        We <GradientText>will</GradientText> create<br/>
+        We <Highlight>will</Highlight> create<br/>
         any automation<br/>
-        for <GradientText>you</GradientText><br/>
+        for <Highlight>you</Highlight><br/>
         </Headline>
         <Tagline>
-          That <GradientText>save your time and improve</GradientText> the quality of your bussiness operation<br/>
-          Ki-Tech
+          <b>That <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>
+          Ki-Tech</b>
           </Tagline>
         <ActionButtons>
           <LightButton>Get your AI implementation plan in 24h</LightButton>

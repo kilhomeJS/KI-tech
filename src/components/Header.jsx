@@ -4,13 +4,20 @@ import { Container } from "../App";
 import img3 from "../assets/img/logo.png";
 
 const HeaderElem = styled.header`
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(99, 27, 27, 0);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   border-radius: 15px;
   margin: 1rem auto;
   max-width: 1024px;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.15);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  margin: 0;
+  width: 100%;
 `;
 
 const HeaderContent = styled.div`
@@ -59,7 +66,7 @@ const List = styled.ul`
 const Li = styled.li`
   font-size: 1rem;
   list-style: none;
-  color: white;
+  var(--text-primary);
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -67,22 +74,49 @@ const Li = styled.li`
     color: var(--accent-color);
   }
 `;
-
+ 
 const GetStartedButton = styled.button`
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-weight: 600;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid #333;
+  padding: 0.5rem 1.25rem;
+  font-weight: 300;
+  font-size: 1rem;
+  box-shadow: 0 0 10px 5px rgba(102, 100, 102, 0.16);
   cursor: pointer;
+  border-radius: 5px;
   transition: all 0.3s ease;
-  
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative; /* Для создания анимации */
+  overflow: hidden; /* Чтобы градиент не выходил за пределы кнопки */
+
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    var(--text-primary);
+  }
+
+  &:hover::before {
+    width: 300%; /* Увеличиваем ширину для эффекта перелива */
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6a00, #ffcc00, #00c6ff, #ff00d8);
+    transition: all 4.5s ease;
+    box-shadow: 0 0 10px 5px rgba(255, 0, 216, 0.66);
+    z-index: -1; 
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
+
 
 const Header = () => {
   const scrollToSection = (section) => {
