@@ -6,25 +6,42 @@ import React from 'react';
 
 const gradient = keyframes`
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 25%;
+  }
+  25% {
+    background-position: 50% 0%;
   }
   50% {
     background-position: 100% 50%;
   }
+  75% {
+    background-position: 50% 100%;
+  }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 25%;
   }
 `;
 
 const GradientBackground = styled.div`
   position: relative;
-  width: 100%;
-  height: 100vh;
-  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+  border-radius: 30px;
+  margin: 30px auto;
   overflow: hidden;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: ${gradient} 15s ease infinite;
+  background: linear-gradient(
+    -45deg, 
+    #ee7752, 
+    #e73c7e, 
+    #9c27b0, 
+    #23a6d5, 
+    #23d5ab, 
+    #8bc34a
+  );
+  background-size: 300% 300%;
+  animation: ${gradient} 20s ease infinite;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 `;
 
 const ContentWrapper = styled.div`
@@ -48,6 +65,7 @@ const Headline = styled.div`
   color: white;
   margin-bottom: 1rem;
   line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
 `;
 
 const Highlight = styled.span`
@@ -62,16 +80,19 @@ const Tagline = styled.div`
 
 const ActionButtons = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 `;
 
 const Button = styled.button`
   padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
   
   &:hover {
     transform: translateY(-3px);
