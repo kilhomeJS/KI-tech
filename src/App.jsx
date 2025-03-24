@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reason from "./components/Resons";
 import HowWorks from "./components/HowWorks";
+import ThemeSwitcher from './components/ThemeSwitcher'
 
 export const Container = styled.div`
   max-width: 1440px;
