@@ -120,12 +120,11 @@ const Header = () => {
             />
           </Logo>
         </LogoContainer>
-        
         <Nav>
           <List>
-            <Li onClick={() => scrollToSection("blog")}>Blog</Li>
-            <Li onClick={() => scrollToSection("cases")}>Cases</Li>
-            <Li onClick={() => scrollToSection("tutorials")}>Tutorials</Li>
+            <Li onClick={() => scrollToSection("blog")}>Work</Li>
+            <Li onClick={() => scrollToSection("cases")}>About</Li>
+            <Li onClick={() => scrollToSection("tutorials")}>Contact</Li>
           </List>
         </Nav>
         
