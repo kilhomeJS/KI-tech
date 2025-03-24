@@ -26,7 +26,7 @@ const GradientBackground = styled.div`
   position: relative;
   width: 90%;
   max-width: 1200px;
-  height: 85vh;
+  height: 65vh;
   border-radius: 30px;
   margin: 30px auto;
   overflow: hidden;
