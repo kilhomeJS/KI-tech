@@ -17,6 +17,7 @@ export const Container = styled.div`
 function App() {
   return (
     <>
+      <ThemeSwitcher />
       <Header />
       <Hero />
       <Container>
