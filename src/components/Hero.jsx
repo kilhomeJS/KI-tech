@@ -22,6 +22,35 @@ const gradient = keyframes`
   }
 `;
 
+const GradientText = styled.h1`
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffffff, rgba(255, 255, 255, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: lighten;
+`;
+
+const glowAnimation = keyframes`
+  0% {
+    box-shadow: 0px 0px 50px rgba(255, 0, 128, 0.4), 0px 0px 100px rgba(128, 0, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0px 0px 70px rgba(255, 0, 128, 0.7), 0px 0px 120px rgba(128, 0, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 50px rgba(255, 0, 128, 0.4), 0px 0px 100px rgba(128, 0, 255, 0.4);
+  }
+`;
+
+const HeroContainer = styled.div`
+  position: relative;
+  padding: 50px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #ff0080, #8000ff);
+  animation: ${glowAnimation} 3s infinite alternate;
+`;
+
 const GradientBackground = styled.div`
   position: relative;
   width: 90%;
