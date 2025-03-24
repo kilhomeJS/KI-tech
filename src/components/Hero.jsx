@@ -69,7 +69,7 @@ const Headline = styled.div`
 `;
 
 const Highlight = styled.span`
-  color: #ff9d40;
+  color: #673ab7;
 `;
 
 const Tagline = styled.div`
@@ -328,9 +328,9 @@ const Hero = () => {
           <GradientBackground>
       <ContentWrapper>
       <Headline>
-        I <Highlight>WILL</Highlight>CREATE<br/>
-        ANY AUTOMATION<br/>
-        FOR<Highlight>YOU</Highlight><br/>
+        We <Highlight>will</Highlight> create<br/>
+        any automation<br/>
+        for<Highlight>you</Highlight><br/>
         </Headline>
         <Tagline>
           that <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>
