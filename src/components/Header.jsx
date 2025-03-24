@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Container } from "../App";
+import img3 from "../assets/img/logo.jpg";
 
 const HeaderElem = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
@@ -18,12 +19,35 @@ const HeaderContent = styled.div`
   width: 100%;
 `;
 
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Logo = styled.div`
-  font-family: 'Krona One', sans-serif;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 1.2rem;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.3);
+    opacity: 0.7;
+    pointer-events: none;
+  }
 `;
 
 const Nav = styled.nav`
@@ -88,7 +112,14 @@ const Header = () => {
   return (
     <HeaderElem id="home">
       <HeaderContent>
-        <Logo>VALUE ADDED TECH</Logo>
+        <LogoContainer>
+          <Logo>
+            <img 
+              src={img3} 
+              alt="KI Tech Logo" 
+            />
+          </Logo>
+        </LogoContainer>
         
         <Nav>
           <List>

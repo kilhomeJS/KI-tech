@@ -333,7 +333,7 @@ const Hero = () => {
         for <Highlight>you</Highlight><br/>
         </Headline>
         <Tagline>
-          that <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>
+          That <Highlight>save your time and improve</Highlight> the quality of your bussiness operation<br/>
           Ki-Tech
           </Tagline>
         <ActionButtons>
