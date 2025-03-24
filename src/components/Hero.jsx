@@ -327,26 +327,18 @@ const Hero = () => {
           <Container>
           <GradientBackground>
       <ContentWrapper>
-        <Headline>
-          The <Highlight>AI-ready</Highlight><br/>
-          Automation<br/>
-          Partner
+      <Headline>
+        I will create <Highlight>any automation</Highlight>
         </Headline>
         <Tagline>
-          Premium way to turn <Highlight>AI</Highlight> into business performance.<br/>
-          Value Added Tech.
-        </Tagline>
+          that <Highlight>save your time and improve</Highlight> the quality of your bussiness operation
+          </Tagline>
         <ActionButtons>
           <LightButton>Get your AI implementation plan in 24h</LightButton>
           <DarkButton>Schedule Your AI Readiness Assessment</DarkButton>
         </ActionButtons>
       </ContentWrapper>
     </GradientBackground>
-            <Header1 className="content">
-              I will create <span className="blue">any automation </span> that
-              will <span className="blue">save your time and improve</span> the
-              quality of your bussiness operation
-            </Header1>
             <IconContainerCenter>
               <MouseIcon
                 height={40}
