@@ -1,73 +1,153 @@
 import styled from "styled-components";
-
-const ContactSection = styled.section`
-  padding: 128px 0;
-`;
-
-const ContactE = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 128px 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background: #ffebd8;
-  border-radius: 15px;
-
-  a {
-    font-size: 37px;
-    color: #000;
-    text-decoration: none;
-    transition: 0.3s;
-
-    &:hover {
-      color: #464646;
-      transition: 0.3s;
-    }
-  }
-
-  @media (max-width: 768px) {
-    & a {
-      font-size: 16px;
-    }
-  }
-`;
+import { GradientBackground, Headline, Highlight } from "./Hero";
+import { FaTelegram, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
+import { SiUpwork } from "react-icons/si";
+import generalStore from "../store/store";
 
 const Header2 = styled.h2`
   margin: 0 auto;
   margin-bottom: 60px;
-  width: 50%;
+  width: 65%;
   text-align: center;
-  font-size: 57px;
-  font-weight: 400;
-  font-family: "Noto Sans Mono", monospace;
+  font-size: 3.5rem;
+  font-weight: 500;
+  font-family: "Krona One", sans-serif;
+  color: white;
+  line-height: 1.3;
 
   @media (max-width: 768px) {
     & {
-      font-size: 24px;
+      width: 90%;
+      font-size: 2.5rem;
     }
   }
   @media (max-width: 425px) {
     & {
-      margin: 0;
-      margin-bottom: 20px;
-      align-items: center;
-      width: auto;
+      width: 100%;
+      margin-bottom: 30px;
+      font-size: 2rem;
     }
   }
 `;
 
+const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ContactCard = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: white;
+  }
+`;
+
+const IconWrapper = styled.div`
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+`;
+
+const ContactInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContactLabel = styled.span`
+  font-size: 0.9rem;
+  opacity: 0.8;
+`;
+
+const ContactValue = styled.span`
+  font-size: 1.1rem;
+  font-weight: 500;
+`;
+
 const Contact = () => {
+  const { theme } = generalStore();
+  
   return (
-    <ContactSection id="contact">
-      <ContactE>
-        <Header2>Want to create something awesome? Drop me an email.</Header2>
-        <a href="#">
-          <span>→</span> killhome2000@gmail.com
-        </a>
-      </ContactE>
-    </ContactSection>
+    <GradientBackground
+      style={{ textAlign: "center", marginBottom: "40px", padding: "60px 20px" }}
+      id="contact"
+    >
+      <Header2>
+        Ready to start automating your business?
+      </Header2>
+      <Headline style={{ fontSize: '2rem', marginBottom: '40px' }}>
+        Contact us through any convenient channel
+      </Headline>
+      
+      <ContactGrid>
+        <ContactCard href="mailto:killhome2000@gmail.com">
+          <IconWrapper>
+            <FaEnvelope />
+          </IconWrapper>
+          <ContactInfo>
+            <ContactLabel>Email</ContactLabel>
+            <ContactValue>killhome2000@gmail.com</ContactValue>
+          </ContactInfo>
+        </ContactCard>
+        
+        <ContactCard href="https://t.me/kitech_support_bot" target="_blank" rel="noopener noreferrer">
+          <IconWrapper>
+            <FaTelegram />
+          </IconWrapper>
+          <ContactInfo>
+            <ContactLabel>Telegram</ContactLabel>
+            <ContactValue>@kitech_support_bot</ContactValue>
+          </ContactInfo>
+        </ContactCard>
+        
+        <ContactCard href="https://www.linkedin.com/in/taras-kononko-b66659324/" target="_blank" rel="noopener noreferrer">
+          <IconWrapper>
+            <FaLinkedinIn />
+          </IconWrapper>
+          <ContactInfo>
+            <ContactLabel>LinkedIn</ContactLabel>
+            <ContactValue>Taras Kononko</ContactValue>
+          </ContactInfo>
+        </ContactCard>
+        
+        <ContactCard href="https://www.upwork.com/freelancers/tarask10" target="_blank" rel="noopener noreferrer">
+          <IconWrapper>
+            <SiUpwork />
+          </IconWrapper>
+          <ContactInfo>
+            <ContactLabel>Upwork</ContactLabel>
+            <ContactValue>Taras K.</ContactValue>
+          </ContactInfo>
+        </ContactCard>
+      </ContactGrid>
+    </GradientBackground>
   );
 };
 

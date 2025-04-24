@@ -1,8 +1,13 @@
 import styled from "styled-components";
-import { Header2, Paragraph } from "./About";
-import { motion } from "framer-motion";
+import { Header2, Paragraph } from "./styles/CommonStyles";
+import { color, motion } from "framer-motion";
 import { BackGround } from "./ApisExp";
 import { Container } from "../App";
+import generalStore from "../store/store";
+import NeedsIcon from "./icons/NeedsIcon";
+import ToolsIcon from "./icons/ToolsIcon";
+import BuildIcon from "./icons/BuildIcon";
+import TestIcon from "./icons/TestIcon";
 
 const ResonContainer = styled.div`
   padding: 140px 0;
@@ -24,13 +29,24 @@ const ReasonWrap = styled(motion.div)`
 `;
 
 const ReasonBlock = styled(motion.div)`
-  box-shadow: -1px 1px 9px 0px #000;
-  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
   margin-bottom: 20px;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 16px;
+  background: ${({ theme }) =>
+    theme === "dark" 
+      ? "linear-gradient(135deg, var(--dark-card-bg), #2a2438)" 
+      : "linear-gradient(135deg, white, #f8f7ff)"};
+  border: 1px solid ${({ theme }) =>
+    theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(140, 166, 243, 0.2)"};
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
 `;
-
 const ReasonContent = styled.div`
   p {
     letter-spacing: 1px;
@@ -72,24 +88,26 @@ const TitleWrapper = styled.div`
     margin-right: 10px;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 375px) {
     & {
       gap: 0;
       align-items: normal;
     }
     h2 {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 `;
 
 const HowWorks = () => {
+  const { theme } = generalStore();
+
   return (
-    <BackGround>
+    <BackGround bg="#f0e6ff" theme={theme}>
       <ResonContainer>
         <Container>
-          <Header2 style={{ paddingBottom: "100px" }}>
-            HOW DOES IT WORKS
+          <Header2 style={{ paddingBottom: "100px", textAlign: "center", width: "100%" }} theme={theme}>
+            HOW DOES IT WORK
           </Header2>
 
           <ReasonWrap
@@ -98,24 +116,26 @@ const HowWorks = () => {
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <ReasonBlock variants={itemVariants}>
+            <ReasonBlock variants={itemVariants} theme={theme}>
               <ReasonContent>
                 <TitleWrapper>
-                  <Header2>01. Understanding Your Needs</Header2>
+                  <NeedsIcon />
+                  <Header2 theme={theme}>01. Understanding Your Needs</Header2>
                 </TitleWrapper>
-                <Paragraph>
+                <Paragraph theme={theme}>
                   We start by discussing your business goals, current processes,
                   and pain points. Understanding your unique needs is crucial to
                   creating a tailored automation solution.
                 </Paragraph>
               </ReasonContent>
             </ReasonBlock>
-            <ReasonBlock variants={itemVariants}>
+            <ReasonBlock variants={itemVariants} theme={theme}>
               <ReasonContent>
                 <TitleWrapper>
-                  <Header2>02. Choosing the Right Tools</Header2>
+                  <ToolsIcon />
+                  <Header2 theme={theme}>02. Choosing the Right Tools</Header2>
                 </TitleWrapper>
-                <Paragraph>
+                <Paragraph theme={theme}>
                   Based on your goals, we select the best tools for automating
                   your marketing, workflows, or any other business process. I
                   work with a wide range of platforms like Zapier, Make.com,
@@ -124,26 +144,28 @@ const HowWorks = () => {
                 </Paragraph>
               </ReasonContent>
             </ReasonBlock>
-            <ReasonBlock variants={itemVariants}>
+            <ReasonBlock variants={itemVariants} theme={theme}>
               <ReasonContent>
                 <TitleWrapper>
-                  <Header2>03. Building Your Automation</Header2>
+                  <BuildIcon />
+                  <Header2 theme={theme}>03. Building Your Automation</Header2>
                 </TitleWrapper>
-                <Paragraph>
-                  Once we know what tools to use, I’ll create custom workflows
-                  that automate repetitive tasks. Whether it’s setting up
-                  marketing funnels, email campaigns, or CRM automation, I’ll
+                <Paragraph theme={theme}>
+                  Once we know what tools to use, I'll create custom workflows
+                  that automate repetitive tasks. Whether it's setting up
+                  marketing funnels, email campaigns, or CRM automation, I'll
                   make sure everything runs seamlessly in the background.
                 </Paragraph>
               </ReasonContent>
             </ReasonBlock>
-            <ReasonBlock variants={itemVariants}>
+            <ReasonBlock variants={itemVariants} theme={theme}>
               <ReasonContent>
                 <TitleWrapper>
-                  <Header2>04. Integration and Testing</Header2>
+                  <TestIcon />
+                  <Header2 theme={theme}>04. Integration and Testing</Header2>
                 </TitleWrapper>
-                <Paragraph>
-                  After the automation is built, I’ll integrate it with your
+                <Paragraph theme={theme}>
+                  After the automation is built, I'll integrate it with your
                   existing systems and test everything to ensure smooth
                   functionality. If any adjustments are needed, they will be
                   made to ensure the system works perfectly for your business.

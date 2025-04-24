@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header2, Paragraph } from "./About";
+import { Header2, Paragraph } from "./styles/CommonStyles";
 import { motion } from "framer-motion";
 import { BackGround } from "./ApisExp";
 import { Container } from "../App";
@@ -9,6 +9,7 @@ import ShieldIcon from "./icons/ShieldIcon";
 import HandsIcon from "./icons/HandsIcon";
 import CodeIcon from "./icons/CodeIcon";
 import { useState, useRef } from "react";
+import generalStore from "../store/store";
 
 const ResonContainer = styled.div`
   padding: 140px 0;
@@ -28,10 +29,11 @@ const ReasonBlock = styled(motion.div)`
   margin-bottom: 20px;
   padding: 20px;
   height: 100%;
-  box-shadow: -1px 1px 9px 0px #000;
+  box-shadow: ${({ theme }) => theme === "dark" ? "0px 4px 15px rgba(0, 0, 0, 0.3)" : "-1px 1px 9px 0px #000"};
   border-radius: 10px;
   cursor: pointer;
-  background: #fff;
+  background: ${({ theme }) => theme === "dark" ? "var(--dark-card-bg)" : "#fff"};
+  color: ${({ theme }) => theme === "dark" ? "var(--dark-text-primary)" : "inherit"};
 `;
 
 const ReasonContent = styled.div`
@@ -69,12 +71,12 @@ const TitleWrapper = styled.div`
     margin-right: 10px;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 375px) {
     gap: 0;
     align-items: normal;
 
     h2 {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 `;
@@ -112,7 +114,7 @@ const accItems = [
                   implement best practices for data protection and ensure that
                   all processes are compliant with relevant regulations. From
                   secure API integrations to safe data handling, I work to
-                  ensure that your business’s sensitive information is always
+                  ensure that your business's sensitive information is always
                   protected. You can trust that your systems and data are in
                   safe hands with me.`,
   },
@@ -129,7 +131,7 @@ const accItems = [
   },
   {
     icon: <CodeIcon />,
-    title: "No Need for Detailed Technical Specifications",
+    title: "Simplicity",
     text: `With my extensive experience, I can easily convert your
                   requests into results, without requiring extensive technical
                   documentation. I understand how to get things done with
@@ -138,6 +140,7 @@ const accItems = [
 ];
 
 const Reason = () => {
+  const { theme } = generalStore();
   const [openIndex, setOpenIndex] = useState(null);
   const contentRefs = useRef([]);
 
@@ -146,10 +149,17 @@ const Reason = () => {
   };
 
   return (
-    <BackGround bg="#bcfdb9">
+    <BackGround bg={theme === "dark" ? "var(--dark-bg-secondary)" : "#dce1ff"} theme={theme}>
       <ResonContainer>
         <Container>
-          <Header2 style={{ paddingBottom: "100px" }}>Why Choose Me?</Header2>
+          <Header2 style={{ 
+            paddingBottom: "100px", 
+            textAlign: "center", 
+            width: "100%", 
+            color: theme === "dark" ? "var(--dark-text-primary)" : "#333"
+          }} theme={theme}>
+            Why Choose Me?
+          </Header2>
 
           <ReasonWrap
             variants={containerVariants}
@@ -162,17 +172,24 @@ const Reason = () => {
                 variants={itemVariants}
                 key={i}
                 onClick={() => toggleAccordion(i)}
+                theme={theme}
               >
                 <TitleWrapper>
                   {item.icon}
-                  <Header2>{item.title}</Header2>
+                  <Header2 style={{ color: theme === "dark" ? "var(--dark-text-primary)" : "#333" }}>{item.title}</Header2>
                 </TitleWrapper>
 
                 <ReasonContent
                   isOpen={i === openIndex}
                   contentHeight={contentRefs.current[i]?.scrollHeight || "auto"}
                 >
-                  <Paragraph ref={(el) => (contentRefs.current[i] = el)}>
+                  <Paragraph
+                    style={{ 
+                      paddingTop: "10px", 
+                      color: theme === "dark" ? "var(--dark-text-secondary)" : "#666" 
+                    }}
+                    ref={(el) => (contentRefs.current[i] = el)}
+                  >
                     {item.text}
                   </Paragraph>
                 </ReasonContent>
