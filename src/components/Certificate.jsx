@@ -9,8 +9,6 @@ const CertificateContainer = styled.div`
   padding: 120px 0;
   overflow: hidden;
   background: ${({ theme }) => theme === "dark" ? "var(--dark-bg-secondary)" : "var(--bg-secondary)"};
-  border-radius: 30px;
-  margin: 0 20px;
 `;
 
 const ImageWrapper = styled.div`

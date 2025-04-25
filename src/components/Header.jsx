@@ -62,7 +62,7 @@ const HeaderContent = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: ${({ $burger }) => $burger && "30px"};
+    gap: 25px;
   }
 `;
 

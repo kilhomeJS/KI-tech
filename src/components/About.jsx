@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { Container } from "../App";
 import { Header2, Paragraph } from "./styles/CommonStyles";
+import profilePhoto from '/src/assets/img/profile_photo.jpg';
 
 import Certificate from "./Certificate";
 import ApisExp from "./ApisExp";
@@ -95,11 +96,10 @@ const ProfileImage = styled.div`
   width: 340px;
   height: 340px;
   border-radius: 50%;
-  background-image: url('/src/assets/img/profile_photo.jpg');
+  background-image: url(${profilePhoto});
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
-  border: 8px solid #8ca6f3;
   position: relative;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);

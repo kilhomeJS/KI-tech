@@ -122,6 +122,16 @@ export const GradientBackground = styled.div`
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   z-index: 10;
 
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+    width: 95%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 25px 15px;
+    border-radius: 16px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -201,13 +211,12 @@ export const Headline = styled.div`
     & {
       width: 100%;
       margin-bottom: 20px;
-      font-size: 2.25rem;
+      font-size: 2rem;
     }
   }
-  @media (max-width: 320px) {
+  @media (max-width: 375px) {
     & {
-      margin-bottom: 15px;
-      font-size: 1.75rem;
+      font-size: 1.8rem;
     }
   }
 `;
@@ -263,6 +272,12 @@ export const Tagline = styled.div`
   @media (max-width: 425px) {
     & {
       width: 100%;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+  }
+  @media (max-width: 375px) {
+    & {
       font-size: 1rem;
     }
   }
@@ -281,6 +296,12 @@ export const ActionButtons = styled.div`
       flex-direction: column;
       align-items: center;
     }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
   }
 `;
 

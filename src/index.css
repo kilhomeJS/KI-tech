@@ -45,6 +45,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.7;
   overflow-x: hidden;
+  padding-top: 100px;
 }
 
 body[data-theme="light"] {
