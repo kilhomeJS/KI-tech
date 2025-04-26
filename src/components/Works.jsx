@@ -47,9 +47,12 @@ import {
   FaBox,
   FaFileAlt,
   FaRss,
-  FaGavel
+  FaGavel,
+  FaCogs,
+  FaShapes,
+  FaShoppingCart
 } from "react-icons/fa";
-import { SiZapier, SiMake, SiAirtable, SiGooglesheets, SiOpenai, SiZoom, SiTrello, SiClickup, SiAsana, SiGooglecloud, SiAmazonalexa, SiGmail } from "react-icons/si";
+import { SiZapier, SiMake, SiAirtable, SiGooglesheets, SiOpenai, SiZoom, SiTrello, SiClickup, SiAsana, SiGooglecloud, SiAmazonalexa, SiGmail, SiUpwork } from "react-icons/si";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { BsFillChatDotsFill, BsFillPinMapFill } from "react-icons/bs";
 
@@ -564,6 +567,42 @@ const scenarios = [
     ],
     fullDescription: "End-to-end financial automation system that generates custom invoices based on service delivery, sends strategic payment reminders, processes payments across multiple gateways, and reconciles transactions with accounting software. Reduced late payments by 78%.",
     extraScenariosCount: 3,
+  },
+  {
+    name: "Upwork Client Management",
+    description: "Automated Upwork proposal tracking, client communication, and contract management using Make.com and Airtable. Increased proposal win rate by 25%.",
+    modules: [
+      <SiUpwork style={{ color: "#6FDA44" }} />, // Upwork
+      <SiMake />, // Make.com
+      <SiAirtable style={{ color: "#18BFFF" }} />, // Airtable
+      <FaComments /> // Communication
+    ],
+    fullDescription: "Streamlined freelance workflow on Upwork by automating proposal generation from templates, tracking application status, centralizing client communication, and managing contract milestones in Airtable.",
+    extraScenariosCount: 2,
+  },
+  {
+    name: "Custom AI Model Deployment",
+    description: "Developed and deployed custom AI models for predictive analytics in finance. Integrated with existing systems via REST APIs, improving forecast accuracy by 40%.",
+    modules: [
+      <FaBrain style={{ color: "#8A2BE2" }}/>, // AI Brain
+      <FaCogs />, // Customization/Deployment
+      <FaChartLine />, // Analytics
+      <FaDatabase /> // Data
+    ],
+    fullDescription: "End-to-end solution for creating, training, deploying, and monitoring custom machine learning models tailored to specific business needs, enabling advanced predictive capabilities and data-driven decisions.",
+    extraScenariosCount: 4,
+  },
+  {
+    name: "Shopify Store Enhancement",
+    description: "Enhanced Shopify store with custom theme development, app integrations, and automated marketing workflows. Boosted sales by 30% and average order value by 15%.",
+    modules: [
+      <FaShopify style={{ color: "#96bf48" }} />, // Shopify
+      <FaCode />, // Custom Development
+      <FaHubspot style={{ color: "#ff7a59" }} />, // Marketing Automation (e.g., HubSpot)
+      <FaShoppingCart /> // E-commerce
+    ],
+    fullDescription: "Comprehensive Shopify store optimization including custom feature development, integration of loyalty programs and review apps, and setting up abandoned cart recovery and personalized email campaigns.",
+    extraScenariosCount: 3,
   }
 ];
 
@@ -708,7 +747,8 @@ const Scenarios = () => {
   }
 
   const handleCardClick = (scenario) => {
-    setSelectedScenario(scenario);
+    // setSelectedScenario(scenario); // <-- Commented out to prevent action
+    console.log("Card clicked, but action prevented:", scenario.name); // Optional: log click for debugging
   };
 
   // Улучшенная функция для извлечения и категоризации метрик
